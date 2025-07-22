@@ -3,19 +3,6 @@ import { ModuleLogger } from "../../utils/logger";
 
 export const router = new Router("structureRouter");
 
-/*
-type Folder = {
-  id: string;
-  name: string;
-  type: string;
-  parent: string;
-  depth: number;
-  parentId: string | null;
-  path: string;
-  sorting: any;
-  sortingMode: any;
-};*/
-
 type FolderWithRelations = {
   id: string;
   name: string;
@@ -45,7 +32,6 @@ router.addRoute({
       let fullFolderPath =folderTree[1].name ?? folderTree[0].name ?? "root"
       for (let i = 2; i < folderTree.length; i++) { 
         fullFolderPath = fullFolderPath+"/"+folderTree[i].name;
-        // work with item
       }
 
         return {
